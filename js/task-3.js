@@ -5,18 +5,17 @@ const profile = {
     this.username = newName;
   },
   updatePlayTime(hours) {
-    this.playTime = this.playTime + hours;
+    this.playTime += hours;
   },
   getInfo() {
     return `${this.username} has ${this.playTime} active hours!`;
   },
 };
 
-// Перевірка роботи функцій
-console.log(getInfo(profile)); // "Jacob has 300 active hours!"
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-changeUsername(profile, 'Marco');
-console.log(getInfo(profile)); // "Marco has 300 active hours!"
+profile.changeUsername('Marco');
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
-updatePlayTime(profile, 20);
-console.log(getInfo(profile)); // "Marco has 320 active hours!"
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
